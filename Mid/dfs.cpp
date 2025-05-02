@@ -12,7 +12,7 @@ bool cycleCount = false;
 
 void dfs_visit(int u,vector<vector<int>> &adj,vector<int> &color){
     color[u] = grey;
-    cout << "Visiting node: " << u+1 << endl;
+    cout << "Visiting node: " << u << endl;
 
     for(int v : adj[u]){
         if(color[v] == white) {
@@ -21,11 +21,11 @@ void dfs_visit(int u,vector<vector<int>> &adj,vector<int> &color){
         else if (color[v] == grey) {
             cycle++;
             cycleCount = true;
-            cout << "Cycle at edge: " << u+1 << " -> " << v+1  << endl;
+            cout << "Cycle at edge: " << u << " -> " << v  << endl;
         }
     }
     color[u] = black;
-    cout << "finished node: " << u+1 << endl;
+    cout << "finished node: " << u << endl;
 }
 
 void dfs(vector<vector<int>> &adj, int n){
